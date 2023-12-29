@@ -9,6 +9,7 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
   const [tasks, setTasks] = React.useState(TASKS);
+  const [selectedIndex, setSelectedIndex] = React.useState(0)
 
   function handleRemoveTask(index){
     console.log("i was called with " + index)
@@ -20,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter />
+      <CategoryFilter categories={CATEGORIES} selectedIndex={selectedIndex} onCategoryClicked={setSelectedIndex}/>
       <NewTaskForm />
       <TaskList tasks={tasks} onRemoveTask={handleRemoveTask}/>
     </div>
