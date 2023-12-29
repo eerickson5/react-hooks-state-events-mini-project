@@ -2,12 +2,12 @@ import React from "react";
 import Task from './Task'
 
 function TaskList({tasks, onRemoveTask, activeCategory}) {
-
-  console.log("recieved: ", tasks)
-  const taskComponents = tasks.filter( task => {
+  const taskComponents = tasks
+  .filter( task => {
     if(activeCategory === "All") return true
     return task.category === activeCategory
-    }).map((task, index) => {
+    })
+  .map((task, index) => {
     return(
       <Task 
       category={task.category} 

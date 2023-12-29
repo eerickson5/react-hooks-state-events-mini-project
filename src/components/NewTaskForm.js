@@ -41,7 +41,7 @@ function NewTaskForm({categories, onTaskFormSubmit}) {
           {categoryComponents}
         </select>
       </label>
-      <input type="submit" value="Add task" onClick={handleSubmit}/>
+      <input type="submit" value="Add task" onClick={handleSubmit} onSubmit={handleSubmit}/>
     </form>
   );
 }
