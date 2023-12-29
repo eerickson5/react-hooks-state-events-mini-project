@@ -18,11 +18,19 @@ function App() {
     )
   }
 
+  function handleAddTask(task){
+    console.log("received: ", task)
+    setTasks([
+      ...tasks,
+      task
+    ])
+  }
+
   return (
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} selectedIndex={selectedIndex} onCategoryClicked={setSelectedIndex}/>
-      <NewTaskForm categories={CATEGORIES}/>
+      <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={handleAddTask}/>
       <TaskList tasks={tasks} onRemoveTask={handleRemoveTask} activeCategory={CATEGORIES[selectedIndex]}/>
     </div>
   );
