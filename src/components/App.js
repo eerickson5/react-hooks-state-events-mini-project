@@ -23,7 +23,7 @@ function App() {
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} selectedIndex={selectedIndex} onCategoryClicked={setSelectedIndex}/>
       <NewTaskForm />
-      <TaskList tasks={tasks} onRemoveTask={handleRemoveTask}/>
+      <TaskList tasks={tasks} onRemoveTask={handleRemoveTask} activeCategory={CATEGORIES[selectedIndex]}/>
     </div>
   );
 }

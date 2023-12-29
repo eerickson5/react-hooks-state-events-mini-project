@@ -1,8 +1,12 @@
 import React from "react";
 import Task from './Task'
 
-function TaskList({tasks, onRemoveTask}) {
-  const taskComponents = tasks.map((task, index) => {
+function TaskList({tasks, onRemoveTask, activeCategory}) {
+
+  const taskComponents = tasks.filter( task => {
+    if(activeCategory === "All") return true
+    return task.category === activeCategory
+    }).map((task, index) => {
     return(
       <Task 
       category={task.category} 
